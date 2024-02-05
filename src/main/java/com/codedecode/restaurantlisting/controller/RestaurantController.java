@@ -14,6 +14,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/restaurant")
+@CrossOrigin
 public class RestaurantController {
 private RestaurantService restaurantService;
 @PostMapping
