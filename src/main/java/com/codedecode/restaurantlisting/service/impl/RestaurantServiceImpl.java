@@ -3,9 +3,11 @@ package com.codedecode.restaurantlisting.service.impl;
 import com.codedecode.restaurantlisting.dto.RestuarantDTO;
 import com.codedecode.restaurantlisting.entity.Restaurant;
 import com.codedecode.restaurantlisting.mapper.RestaurantMapper;
+import com.codedecode.restaurantlisting.mapper.RestaurantMapperInterface;
 import com.codedecode.restaurantlisting.repo.RestaurantRepository;
 import com.codedecode.restaurantlisting.service.RestaurantService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,13 +17,25 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class RestaurantServiceImpl implements RestaurantService {
+    private final RestaurantMapperInterface restaurantMapperInterface;
+    @Autowired
     private RestaurantRepository restaurantRepository;
+
+    @Autowired
+    public RestaurantServiceImpl(
+            RestaurantMapperInterface restaurantMapperInterface
+    ){
+      this.restaurantMapperInterface = restaurantMapperInterface;
+
+    }
+
+
     @Override
     public RestuarantDTO createRestaurant(RestuarantDTO restuarantDTO) {
-        RestaurantMapper mapper = new RestaurantMapper();
-       Restaurant restaurant= mapper.mapToRestaurant(restuarantDTO);
+        RestaurantMapperInterface mapper ;
+       Restaurant restaurant= restaurantMapperInterface.mapToRestaurant(restuarantDTO);
         Restaurant restaurantSave = restaurantRepository.save(restaurant);
-        return  RestaurantMapper.matToRestaurantDTO(restaurantSave);
+        return  restaurantMapperInterface.matToRestaurantDTO(restaurantSave);
     }
     @Override
     public List<RestuarantDTO> getRestaurantDTO() {

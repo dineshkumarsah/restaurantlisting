@@ -23,8 +23,9 @@ public ResponseEntity<RestuarantDTO> createRestaurant(@RequestBody RestuarantDTO
     return new ResponseEntity<>(saveRestaurantDTO, HttpStatus.CREATED);
 }
 @GetMapping
-public List<RestuarantDTO> getAllRestaurant(){
-    return restaurantService.getAllRestaurant();
+public ResponseEntity<List<RestuarantDTO>>  getAllRestaurant(){
+    List<RestuarantDTO> restuarantDTOList = restaurantService.getAllRestaurant();
+    return new ResponseEntity<>(restuarantDTOList, HttpStatus.OK);
 }
 @GetMapping("/{id}")
 public ResponseEntity<RestuarantDTO> getRestaurantById(@PathVariable Integer id){
