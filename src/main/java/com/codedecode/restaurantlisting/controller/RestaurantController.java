@@ -1,7 +1,5 @@
 package com.codedecode.restaurantlisting.controller;
-
 import com.codedecode.restaurantlisting.dto.RestuarantDTO;
-import com.codedecode.restaurantlisting.entity.Restaurant;
 import com.codedecode.restaurantlisting.service.RestaurantService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -9,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController

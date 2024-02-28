@@ -7,7 +7,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: local
   application:
     name: RESTAURANT2-SERVICE
   datasource:

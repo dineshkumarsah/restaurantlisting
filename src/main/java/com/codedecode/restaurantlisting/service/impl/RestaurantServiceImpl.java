@@ -2,7 +2,6 @@ package com.codedecode.restaurantlisting.service.impl;
 
 import com.codedecode.restaurantlisting.dto.RestuarantDTO;
 import com.codedecode.restaurantlisting.entity.Restaurant;
-import com.codedecode.restaurantlisting.mapper.RestaurantMapper;
 import com.codedecode.restaurantlisting.mapper.RestaurantMapperInterface;
 import com.codedecode.restaurantlisting.repo.RestaurantRepository;
 import com.codedecode.restaurantlisting.service.RestaurantService;

@@ -1,7 +1,6 @@
 package com.codedecode.restaurantlisting.service;
 
 import com.codedecode.restaurantlisting.dto.RestuarantDTO;
-import com.codedecode.restaurantlisting.entity.Restaurant;
 
 import java.util.List;
 import java.util.Optional;
